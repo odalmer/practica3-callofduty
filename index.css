@@ -1,50 +1,51 @@
 *{
     padding:0px;
     margin: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html{
     height: 100%;
 }
 header{
+    position: sticky;
+    top: 0;
     grid-area: header;
     position: relative;
-    padding: 80px;
-    background: url('https://i.blogs.es/6a5540/cod/1366_2000.jpg') no-repeat center;
-    margin-bottom: 1%;
     width: 100%;
+    background-color: black;
+    color: white;
+    padding-left: 2%;
 }
 
-#header{
+#banner{
+    grid-area: banner;
     width: 100%;
+    height: 500px;
+    background: url('https://images7.alphacoders.com/374/thumb-1920-374404.jpg') no-repeat center;
 }
 table, th, td{
     border: 1px solid black;
     padding: 1%;
+    margin: auto;
+    margin-bottom: 2%;
+    width: 70%;
 }
 a{
     text-decoration: none;
 }
 
 img{
-    text-align: center;
-    /* width: 100%; */
-}
-#header_text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 30px;
+    display: block;
+    width: 100%;
+    margin: auto;
 }
 
 footer{
     grid-area: footer;
     background-color: black;
     color: white;
+    padding-left: 1%;
     /* padding: 40px;
     clear: both; */
 }
@@ -56,8 +57,9 @@ footer{
 }
 
 #aside{
+
     grid-area: aside;
-    /* margin: 1%; */
+    margin-left: 5%;
     /* float: right;
     width: 430px;
     height: 1290px; */
@@ -70,6 +72,7 @@ footer{
     align-items: center;
     justify-content: center;
     background-color: #000;
+    margin-bottom: 3%;
 }
 
 #escribenos{
@@ -87,6 +90,7 @@ footer{
     font-size: 30px;
 } 
 .p{
+    font-size: 18px;
     text-align: justify;
     line-height: 1.5;
     margin: 3%; 
@@ -99,6 +103,7 @@ table{
 img{
     width: 100%;
     margin: 1%;
+    justify-content: center;
     text-align: center;
 }
 
@@ -108,28 +113,43 @@ body{
 
 
 /* responsive css grid  ==============================*/
+
 .grid-container{
     display: grid;
     gap: 10px;
     grid-template: 
-    "header" auto
+    "header" 60px
+    "banner" auto
     "nav" auto
     "main" auto
     "aside" auto
     "escribenos" auto
-    "footer" 80px; 
+    "footer" 60px; 
 }
+
 /* pc ============================= */
 @media (min-width: 900px){
+    img{
+    display: block;
+    width: 95%;
+    margin: auto;
+    }
+
+    form{
+        width: 40%;
+        margin-top: 5%;
+
+    }
     .grid-container{
         justify-content: center;
         grid-template: 
-        "header header" auto
-        "nav nav" auto
-        "main aside" auto
-        "escribenos escribenos" auto
-        "footer footer" 80px /
-        40%   40%; 
+        "header header header header" 60px
+        "banner banner banner banner" auto
+        "nav nav  nav nav" auto
+        ". main aside ." auto
+        "escribenos escribenos escribenos escribenos" auto
+        "footer footer footer footer" 60px /
+        10% 50%  30% 10%; 
     }
 }
 
@@ -172,11 +192,12 @@ ul{
 *{box-sizing:border-box;}
 
 form{
-	width:90%;
+    margin-top: 5%;
 	padding:16px;
 	border-radius:10px;
 	margin:auto;
-	background-color:#466060;
+    background-color:#cacaca;
+    /* border: solid #466060; */
 }
 
 form label{
