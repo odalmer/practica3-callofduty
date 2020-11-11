@@ -23,12 +23,17 @@ html{
     background-size: cover;
 
 }
-table, th, td{
-    border: 1px solid black;
-    padding: 1%;
+table{
+    width: 95%;
     margin: auto;
     margin-bottom: 2%;
-    width: 70%;
+    border: solid black 1px;
+}
+th, td{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+
+    padding: 1%;
 }
 a{
     text-decoration: none;
