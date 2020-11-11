@@ -7,22 +7,21 @@
 html{
     height: 100%;
 }
-header{
-    position: sticky;
-    top: 0;
+/* header{
     grid-area: header;
-    position: relative;
     width: 100%;
     background-color: black;
     color: white;
     padding-left: 2%;
-}
+} */
 
 #banner{
     grid-area: banner;
     width: 100%;
-    height: 500px;
-    background: url('https://images7.alphacoders.com/374/thumb-1920-374404.jpg') no-repeat center;
+    /* height: 500px; */
+    background: url('https://i.pinimg.com/originals/a2/49/06/a249063044d0e8ff4e9454f201d32118.jpg') no-repeat center;
+    background-size: cover;
+
 }
 table, th, td{
     border: 1px solid black;
@@ -45,7 +44,7 @@ footer{
     grid-area: footer;
     background-color: black;
     color: white;
-    padding-left: 1%;
+    padding-left: 2%;
     /* padding: 40px;
     clear: both; */
 }
@@ -54,25 +53,25 @@ footer{
     /* float: left;
     width: 430px;
     height: 100%; */
+    border-right: solid rgb(194, 194, 194) 1px;
+    
 }
 
 #aside{
-
     grid-area: aside;
-    margin-left: 5%;
-    /* float: right;
-    width: 430px;
-    height: 1290px; */
 }
 
 #nav{
     grid-area: nav;
     width:100%;
-    display:flex;
-    align-items: center;
+    display:grid;
     justify-content: center;
     background-color: #000;
     margin-bottom: 3%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
 }
 
 #escribenos{
@@ -118,8 +117,8 @@ body{
     display: grid;
     gap: 10px;
     grid-template: 
-    "header" 60px
-    "banner" auto
+    /* "header" 60px */
+    "banner" 500px
     "nav" auto
     "main" auto
     "aside" auto
@@ -136,20 +135,26 @@ body{
     }
 
     form{
-        width: 40%;
+        width: 80%;
         margin-top: 5%;
+
+    }
+    #aside{
+        position: sticky;
+        top: 5%;
+        height: calc(100% - 400px); /* Negate the fixed width element value from 100% */
 
     }
     .grid-container{
         justify-content: center;
         grid-template: 
-        "header header header header" 60px
-        "banner banner banner banner" auto
+        /* "header header header header" 60px */
+        "banner banner banner banner" 500px
         "nav nav  nav nav" auto
         ". main aside ." auto
-        "escribenos escribenos escribenos escribenos" auto
+        ". escribenos . ." auto
         "footer footer footer footer" 60px /
-        10% 50%  30% 10%; 
+        15% 50%  20% 15%; 
     }
 }
 
@@ -163,7 +168,6 @@ ul{
 
 .nav > li{
     float: left;
-    display: grid;
 }
 
 .nav li a {
@@ -178,14 +182,16 @@ ul{
     background-color: #434343;
 }
 
+/* SubMenu */
 .nav li ul{
     display:none;
     position: center;
-    min-width: 140px;
+    max-width: 140px;
 }
 
 .nav li:hover > ul{
     display: block;
+    max-width: 140px;    
 }
 
 /* Formulario ======================================*/
