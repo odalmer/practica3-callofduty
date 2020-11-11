@@ -194,10 +194,10 @@ ul{
     max-width: 140px;
 }
 
-.nav li:hover > ul{
+/* .nav li:hover > ul{
     display: block;
     max-width: 140px;    
-}
+} */
 
 /* Formulario ======================================*/
 *{box-sizing:border-box;}
